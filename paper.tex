@@ -1,0 +1,442 @@
+% ============================================================
+%  QSS20 Final Project — Digital Health Exclusion in Kenya
+%  Single-column PNAS mathematics template (pnasmathematics).
+%  Start from the PNAS single-column Overleaf template, replace
+%  its main.tex with this file and its .bib with references.bib.
+%  In pnas-new.cls set displaywatermark to false.
+% ============================================================
+
+\documentclass[9pt,twoside]{pnas-new}
+
+\articletype{SOCIAL SCIENCES}
+
+\templatetype{pnasmathematics}
+
+\begin{document}
+
+\title{Who Gets Left Behind? Digital Exclusion Among Kenyan Women and
+the Reach of Maternal Health Interventions}
+
+\author[a]{Aulanni Kidd}
+
+\affil[a]{QSS20, Dartmouth College, Hanover, NH 03755}
+
+\leadauthor{Kidd}
+
+\significancestatement{Digital maternal health tools are expanding
+rapidly across sub-Saharan Africa, yet they assume a baseline of
+connectivity that many women do not have. Using nationally representative
+data from the Kenya 2022 Demographic and Health Survey ($n = 32{,}156$),
+we show that education is the single strongest predictor of internet use,
+stronger than wealth or geography. Women with no education have odds
+of internet use roughly 52.6 times lower than women with higher
+education. A rural woman with primary education has less than a 5\%
+predicted probability of using the internet in the poorest wealth
+quintile. These findings imply that internet-dependent maternal health
+interventions, as currently designed, are least reachable by the women
+who need them most.}
+
+\authorcontributions{A.K.\ designed the study, cleaned the data,
+conducted all analyses, and wrote the manuscript.}
+
+\authordeclaration{The author declares no competing interests.}
+
+\equalauthors{}
+
+\correspondingauthor{\textsuperscript{a}Email:
+aulanni.kidd@dartmouth.edu}
+
+\keywords{digital health $|$ maternal health $|$ Kenya $|$ digital
+divide $|$ mHealth}
+
+\begin{abstract}
+Digital maternal health tools (SMS-based reminders, mHealth
+applications, and online health portals) are expanding rapidly across
+sub-Saharan Africa. Yet these tools assume a baseline of digital
+connectivity that many women do not have. Using data from the Kenya 2022
+Demographic and Health Survey ($n = 32{,}156$ women aged 15--49), this
+paper examines how wealth, education, geographical residence, and age
+predict phone ownership and internet use. While 74.7\% of Kenyan women
+own a phone, only 36.9\% use the internet, a gap that widens
+dramatically across socioeconomic strata. Logistic regression reveals
+that education is the single strongest predictor of internet use: women
+with no education have odds of internet use roughly 52.6 times lower than
+women with higher education, even after controlling for wealth, residence,
+and age. Wealth is the second-largest predictor, with the
+richest-quintile women nearly 20 times more likely to use the internet
+than the poorest. Urban residence confers only a modest independent
+advantage after controlling for socioeconomic composition. Predicted
+probabilities show that a rural woman with primary education has less than
+a 5\% chance of internet use in the poorest wealth quintile, rising to
+only 48\% in the richest. These findings suggest that digital maternal
+health interventions systematically exclude the women most at risk and
+call for a phone-first, education-aware design philosophy.
+\end{abstract}
+
+\dates{This manuscript was compiled on \today.}
+\doi{\url{www.pnas.org/cgi/doi/10.1073/pnas.XXXXXXXXXX}}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}
+  {\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+\Firstpage
+
+Maternal mortality remains one of the most persistent global health
+inequities, with the vast majority of preventable deaths concentrated in
+sub-Saharan Africa \cite{who2025,unicef2023}. In response, governments,
+NGOs, and technology companies have invested heavily in digital health
+tools designed to extend the reach of maternal care beyond traditional
+clinical settings \cite{mwaisaka2025}. Kenya has been a particularly
+active site of mHealth innovation: community health workers use mobile
+devices to track pregnant patients, SMS systems remind women of antenatal
+appointments, and mobile-linked platforms deliver nutrition and
+complication-alert information \cite{mwaisaka2025,nyatuka2025}.
+
+Yet a fundamental question underlies these interventions: do the women
+they are designed to reach actually have access to the digital
+infrastructure they require? If digital health tools disproportionately
+reach women who are already wealthier, more educated, and more urban,
+they risk reinforcing, rather than reducing, maternal health
+inequities. Understanding the structure of digital exclusion is therefore
+a precondition for designing interventions that work for the women who
+need them most.
+
+\Endparasplit
+
+This paper makes two contributions. First, it provides a nationally
+representative descriptive picture of phone ownership and internet use
+among Kenyan women aged 15--49 across wealth, education, and residence
+groups. Second, it uses logistic regression to identify the independent
+predictors of digital access, disentangling the roles of wealth,
+education, and geography. Results reveal that education is the dominant
+gating factor for complex digital tools, that wealth drives an enormous
+gradient in internet use, and that urban-rural disparities in
+connectivity are largely explained by socioeconomic composition rather
+than geography per se.
+
+\section*{Background}
+
+Digital health interventions in low- and middle-income countries have
+shown promising results in controlled settings. Mwaisaka et al.\
+\cite{mwaisaka2025} found that a combined mHealth and community-based
+intervention in Kwale County, Kenya improved maternal outcomes for young
+mothers. Nyatuka et al.\ \cite{nyatuka2025} argue for a frugal ICT4D
+framework that prioritises low-cost, locally appropriate digital
+solutions for maternal care. However, most published mHealth evaluations
+are conducted in peri-urban settings and disproportionately enrol women
+with secondary education or above
+\cite{batist2019,till2023,soyege2025}, precisely the groups least
+likely to represent Kenya's highest-risk maternal populations.
+
+Prior literature has documented substantial digital divides in
+sub-Saharan Africa by wealth, education, and geography, but few studies
+use nationally representative samples to decompose these predictors
+simultaneously. The Kenya 2022 DHS provides a rare opportunity to
+quantify digital access at population scale, linking connectivity
+variables to the full socioeconomic profile of respondents.
+
+\section*{Data and Methods}
+
+\subsection*{Data source}
+
+This analysis uses the Kenya 2022 Demographic and Health Survey (DHS)
+Individual Recode \cite{kdhs2022}, a nationally representative
+cross-sectional household survey of women aged 15--49. The working sample
+is $n = 32{,}156$ after listwise deletion of missing values across the
+six analytic variables.
+
+\subsection*{Variables}
+
+Two binary outcomes are examined: \textit{phone ownership}
+(\texttt{v169a}, owns a mobile telephone, 0/1) and \textit{internet use}
+(\texttt{v171a}, uses the internet, 0/1). Phone ownership is the
+hardware prerequisite for mobile-based interventions; internet use is
+required for app- and web-based tools. Predictors are household
+\textit{wealth quintile} (\texttt{v190}; 1~=~poorest, 5~=~richest),
+\textit{education level} (\texttt{v106}; no education, primary,
+secondary, higher), \textit{urban/rural residence} (\texttt{v025}), and
+\textit{age} in years (\texttt{v012}). Table~\ref{tab:sample} reports
+the sample distribution across all predictor categories.
+
+\begin{table}[h]
+\centering
+\caption{Sample characteristics. Kenya DHS 2022 women aged 15--49.
+$N = 32{,}156$.}
+\label{tab:sample}
+\begin{tabular}{@{}lrcc@{}}
+\toprule
+Group & $n$ & Phone & Internet \\
+\midrule
+\textit{Wealth quintile} & & & \\
+\quad Q1 (Poorest) & 7{,}073 & 54.3\% &  5.4\% \\
+\quad Q2            & 5{,}742 & 66.8\% & 17.1\% \\
+\quad Q3            & 6{,}345 & 76.4\% & 31.9\% \\
+\quad Q4            & 7{,}160 & 85.4\% & 53.7\% \\
+\quad Q5 (Richest)  & 5{,}836 & 92.5\% & 79.5\% \\
+\addlinespace
+\textit{Education level} & & & \\
+\quad No education  &  3{,}836 & 66.2\% &  4.9\% \\
+\quad Primary       & 11{,}807 & 69.3\% & 16.8\% \\
+\quad Secondary     & 11{,}634 & 73.0\% & 45.2\% \\
+\quad Higher        &  4{,}879 & 98.8\% & 90.9\% \\
+\addlinespace
+\textit{Residence} & & & \\
+\quad Rural         & 19{,}770 & 68.4\% & 24.3\% \\
+\quad Urban         & 12{,}386 & 85.0\% & 56.9\% \\
+\addlinespace
+\textit{Full sample} & 32{,}156 & 74.7\% & 36.9\% \\
+\bottomrule
+\end{tabular}
+\smallskip\\
+\raggedright{\footnotesize Mean age = 28.6 years (SD not reported;
+computed from \texttt{v012}).}
+\end{table}
+
+\subsection*{Analytic strategy}
+
+The analysis proceeds in three steps. First, group means of phone
+ownership and internet use are computed across all predictor categories.
+Second, two logistic regression models, one per outcome, regress each
+binary outcome on wealth quintile, education, residence, and age
+simultaneously, with reference categories of wealth Q1, higher
+education, and rural residence. Results are reported as odds ratios (ORs)
+with 95\% confidence intervals. Third, predicted probabilities are
+computed across wealth quintiles holding education fixed at Primary,
+residence at Rural, and age at the sample mean (28.6 years). All
+analyses were conducted in Python using \texttt{statsmodels}.
+
+\section*{Results}
+
+\subsection*{Overall access rates}
+
+Across the full sample, 74.7\% of women own a mobile phone while only
+36.9\% use the internet. This 37.8 percentage-point gap indicates that
+phone ownership substantially overstates effective digital connectivity.
+
+\subsection*{Descriptive patterns}
+
+\textbf{Wealth.} Fig.~\ref{fig:wealth} shows that internet use rises
+steeply from 5.4\% in Q1 to 79.5\% in Q5, a 74.1 percentage-point
+gap. Phone ownership also rises with wealth (54.3\% to 92.5\%), but the
+gradient is shallower (38.2~pp). In Q1, more than half of women own a
+phone yet fewer than one in eighteen uses the internet.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/phone_vs_internet_wealth.png}
+\caption{Phone ownership and internet use by wealth quintile. Q1 =
+poorest, Q5 = richest. Kenya DHS 2022 ($n=32{,}156$).}
+\label{fig:wealth}
+\end{figure}
+
+\textbf{Education.} Fig.~\ref{fig:education} shows the steepest gradient
+of any predictor for internet use: from 4.9\% among women with no
+education to 90.9\% among those with higher education, an 86.0~pp
+gap. For phone ownership the gap is 32.6~pp (66.2\% to 98.8\%). The jump
+from secondary to higher education is especially large for internet use
+(45.2\% to 90.9\%), suggesting qualitatively different digital engagement
+at the post-secondary level.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/phone_vs_internet_education.png}
+\caption{Phone ownership and internet use by highest education level.
+Kenya DHS 2022 ($n=32{,}156$).}
+\label{fig:education}
+\end{figure}
+
+\textbf{Urban/rural residence.} Internet use is 56.9\% among urban women
+versus 24.3\% among rural women, a 32.6~pp gap. Phone ownership shows
+a smaller gap (85.0\% vs.\ 68.4\%), and 68.4\% of rural women own a
+phone, indicating a viable foundation for SMS-based outreach.
+
+\textbf{Compound disadvantage.} Fig.~\ref{fig:heatmap} shows internet
+use rates at each wealth-by-education combination. A Q1 woman with no
+education has a 1.5\% internet use rate; a Q5 woman with higher education
+has 96.8\%. Education can partially offset low wealth: a Q1 woman with
+higher education uses the internet at 54.8\%, far above the Q3 average
+for women with no education (9.8\%). Conversely, wealth alone cannot
+overcome an education deficit: Q5 women with no education use the
+internet at only 32.4\%.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/heatmap_wealth_education.png}
+\caption{Internet use rate (\%) by wealth quintile (rows) and education
+level (columns). Kenya DHS 2022 ($n=32{,}156$).}
+\label{fig:heatmap}
+\end{figure}
+
+\subsection*{Logistic regression}
+
+Table~\ref{tab:regression} reports odds ratios from both models.
+Fig.~\ref{fig:forest} visualises these on a log scale.
+
+\begin{table*}[t]
+\centering
+\caption{Logistic regression odds ratios for phone ownership and internet
+use. Reference categories: Wealth Q1, Higher education, Rural residence.
+Kenya DHS 2022 ($n=32{,}156$). All ORs significant at $p<0.05$ except
+age in the internet use model ($p=0.293$).}
+\label{tab:regression}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{\textbf{Internet Use}}
+& \multicolumn{2}{c}{\textbf{Phone Ownership}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Predictor & OR & 95\% CI & OR & 95\% CI \\
+\midrule
+\textit{Wealth (ref: Q1)} & & & & \\
+\quad Q2 & 2.221 & (1.947,\ 2.533) & 1.617 & (1.480,\ 1.766) \\
+\quad Q3 & 4.305 & (3.800,\ 4.878) & 2.356 & (2.147,\ 2.585) \\
+\quad Q4 & 8.673 & (7.617,\ 9.875) & 3.619 & (3.240,\ 4.041) \\
+\quad Q5 & 19.894 & (17.176,\ 23.042) & 5.546 & (4.792,\ 6.419) \\
+\addlinespace
+\textit{Education (ref: Higher)} & & & & \\
+\quad Secondary    & 0.132 & (0.118,\ 0.147) & 0.078 & (0.060,\ 0.101) \\
+\quad Primary      & 0.044 & (0.039,\ 0.049) & 0.044 & (0.033,\ 0.057) \\
+\quad No education & 0.019 & (0.016,\ 0.023) & 0.043 & (0.032,\ 0.057) \\
+\addlinespace
+\textit{Residence (ref: Rural)} & & & & \\
+\quad Urban & 1.103 & (1.022,\ 1.190) & 1.161 & (1.067,\ 1.262) \\
+\addlinespace
+Age (per year) & 0.998 & (0.995,\ 1.002) & 1.138 & (1.133,\ 1.142) \\
+\midrule
+Pseudo $R^2$ & \multicolumn{2}{c}{0.357} & \multicolumn{2}{c}{0.273} \\
+$N$ & \multicolumn{4}{c}{32{,}156} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/odds_ratio_plot.png}
+\caption{Forest plot of odds ratios (log scale) for internet use and
+phone ownership. Dashed line at OR~=~1. Reference: Wealth Q1, Higher
+education, Rural. Kenya DHS 2022 ($n=32{,}156$).}
+\label{fig:forest}
+\end{figure}
+
+\textbf{Education is the dominant predictor.} Women with no education
+have odds of internet use roughly 52.6 times lower than those with higher
+education (OR~=~0.019; 95\%~CI: 0.016--0.023), exceeding the largest
+wealth contrast (Q5 vs.\ Q1: OR~=~19.894). The education effect is
+larger for internet use than phone ownership (OR~=~0.043 for phones),
+indicating that education shapes the \textit{ability to use} digital
+services beyond the ability to acquire a device.
+
+\textbf{Wealth drives a massive gradient.} Controlling for education and
+residence, richest-quintile women have nearly 20 times the odds of
+internet use versus poorest-quintile women. The gradient is monotonic and
+accelerating across quintiles (Q2:~2.22; Q3:~4.31; Q4:~8.67;
+Q5:~19.89). The wealth effect on phone ownership is significant but
+substantially smaller (Q5 vs.\ Q1: OR~=~5.55).
+
+\textbf{Urban residence confers modest independent advantage.} After
+controlling for wealth and education, urban women have only 10.3\% higher
+odds of internet use than rural women (OR~=~1.103; $p=0.012$). This
+small effect, relative to the large raw urban-rural gap (32.6~pp),
+implies that most of the observed urban advantage is compositional,
+driven by urban areas concentrating wealthier, better-educated
+populations, rather than reflecting infrastructure differences per se.
+
+\textbf{Age effects diverge across outcomes.} Age has a significant
+positive effect on phone ownership (OR~=~1.138 per year; $p<0.001$),
+consistent with longer lifetime exposure to mobile adoption. By contrast,
+age has a near-zero and non-significant effect on internet use
+(OR~=~0.998; $p=0.293$), indicating that internet adoption is driven by
+wealth and education rather than generational patterns.
+
+\subsection*{Predicted probabilities}
+
+Table~\ref{tab:predprobs} shows predicted probabilities across wealth
+quintiles for a rural woman with primary education at the sample mean age,
+a profile representative of a large share of Kenya's highest-risk
+maternal population. Even the wealthiest rural woman with only primary
+education has a predicted internet use probability below 50\% (48.2\%),
+while the poorest has just 4.5\%. Phone ownership remains high across
+the distribution (54.8\%--87.0\%), underscoring the phone-internet gap.
+
+\begin{table}[H]
+\centering
+\caption{Predicted probabilities by wealth quintile. Profile: Rural,
+Primary education, Mean age (28.6 years). Kenya DHS 2022.}
+\label{tab:predprobs}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Quintile & Phone & Internet & Gap \\
+\midrule
+Q1 (Poorest) & 54.8\% & 4.5\%  & 50.3 pp \\
+Q2           & 66.2\% & 9.4\%  & 56.8 pp \\
+Q3           & 74.0\% & 16.8\% & 57.2 pp \\
+Q4           & 81.4\% & 28.9\% & 52.5 pp \\
+Q5 (Richest) & 87.0\% & 48.2\% & 38.8 pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{Discussion}
+
+\textbf{Education as the primary bottleneck.} The finding that education
+dominates wealth as an independent predictor of internet use has direct
+implications for digital health design. Many connectivity interventions
+assume that reducing the cost of devices or data will unlock access for
+underserved women. This analysis suggests that for women with low
+education, cost is not the binding constraint: digital literacy (the
+ability to navigate applications and interpret health information online)
+may be a prerequisite that cost-based interventions alone cannot supply.
+
+\textbf{Phone ownership as a viable foundation.} Despite the connectivity
+gap documented here, 68.4\% of rural women own a phone, and phone
+ownership is relatively stable across much of the wealth distribution.
+This points to a viable infrastructure for reaching marginalised women
+through SMS-based and voice-based interventions that do not require
+internet access, as demonstrated by Mwaisaka et al.\ \cite{mwaisaka2025}.
+The findings lend quantitative support to a phone-first design philosophy
+for maternal health outreach.
+
+\textbf{Compositional vs.\ infrastructural urban advantage.} The finding
+that the urban-rural gap largely disappears after controlling for wealth
+and education reframes the policy question. It suggests that equalising
+rural women's educational attainment and economic resources, rather than
+simply expanding rural network coverage, may be the more effective lever
+for closing the connectivity gap.
+
+\textbf{Limitations.} This analysis is cross-sectional and cannot
+establish causality. Outcome variables are binary self-reports and do not
+capture frequency or type of digital use. Standard errors do not account
+for the DHS cluster sampling design and may be slightly underestimated.
+Subgroup heterogeneity by region or age cohort is not explored.
+
+\section*{Conclusion}
+
+Digital maternal health tools carry the promise of extending quality care
+to Kenya's most vulnerable women. This analysis demonstrates that the
+women who face the highest risks of maternal mortality (those who are
+poorest, least educated, and most rural) are precisely those with the
+lowest rates of internet use. Education is the single largest barrier;
+wealth is the second. Urban-rural gaps are largely explained by
+socioeconomic composition. For internet-dependent tools to achieve
+equity, they must either be paired with intensive digital literacy
+support or radically simplified to reduce the education threshold
+required. Without deliberate design for digital exclusion, maternal
+health interventions risk reaching those already advantaged, leaving
+behind the women who need them most.
+
+\dataavail{All analysis code is available at
+\url{https://github.com/aulanni-kidd/qss20_final_digital_health_access}.
+The underlying data are the Kenya 2022 DHS Individual Recode, available
+from the DHS Program (\url{https://dhsprogram.com}) upon registration.}
+
+\acknow{Data were obtained from the Kenya 2022 Demographic and Health
+Survey, conducted by the Kenya National Bureau of Statistics and ICF.
+This project was completed as part of QSS20 at Dartmouth College, Spring
+2026.}
+
+\showacknow{}
+
+\bibliography{references}
+
+\end{document}
